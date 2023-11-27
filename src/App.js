@@ -1,13 +1,13 @@
-import './App.css';
-import Form from "./Form";
+import {LocalizationProvider} from "@mui/x-date-pickers";
+import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
+import Form from './Form'
 
 function App() {
-  return (
-      <div>
-          <h1>Report your mental health</h1>
-          <Form></Form>
-      </div>
-  );
+    return (
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Form></Form>
+        </LocalizationProvider>
+    )
 }
 
 export default App;
