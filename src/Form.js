@@ -30,7 +30,7 @@ function Form(){
                         >
                         </TextField>
                     </div>
-                    <div className={}>
+                    <div>
                         <Typography>Happiness</Typography>
                         <Slider
                             id={"happy"}
