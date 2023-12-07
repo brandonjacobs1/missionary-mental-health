@@ -6,12 +6,13 @@ import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import PsychologyIcon from '@mui/icons-material/Psychology';import Typography from '@mui/material/Typography';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import Typography from '@mui/material/Typography';
 import Image from './logo.jpeg'
 import {useFormik} from "formik";
 import {Slider} from "@mui/material";
-import {DatePicker} from "@mui/x-date-pickers";
 import dayjs from 'dayjs';
+import DateInput from "./date-input";
 
 
 export default function SignInSide() {
@@ -72,11 +73,13 @@ export default function SignInSide() {
                             {...formik.getFieldProps("name")}
                             autoFocus
                         />
-                        <DatePicker
-                            label={'Date'}
-                            id={'date'}
-                            {...formik.getFieldProps("date")}
-                        ></DatePicker>
+                            <DateInput
+                                label={'Date'}
+                                inputName={'date'}
+                                handleBlur={formik.handleBlur}
+                                setFieldValue={formik.setFieldValue}
+                                value={formik.values.date}
+                            ></DateInput>
 
                         <Typography>Happiness</Typography>
                         <Slider
