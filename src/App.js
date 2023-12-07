@@ -12,7 +12,9 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
         <Route path="/" element={<OldApp />} />
+      </LocalizationProvider>
         <Route path="/calendar" element={<CalendarPage />} />
       </Routes>
     </Router>
